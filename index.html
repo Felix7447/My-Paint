@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/index.css">
     <link rel="stylesheet" href="assets/canvas.css">
+    <link rel="stylesheet" href="assets/buttons.css">
+    <link rel="stylesheet" href="assets/colorButtons.css">
     <title>Paint It</title>
 </head>
 <body>
@@ -16,9 +18,9 @@
         <h4>Draw something</h4>
         <canvas id="canvas" width="500px" height="500px"></canvas>
         <div class="buttons">
-            <input type="button" value="Clear">
-            <input type="range" value="5" min="3" max="20">
-            <input type="color">
+            <input class="clearButton" type="button" value="Clear">
+            <input class="rangeButton" type="range" value="5" min="1" max="20">
+            <input id="colorButton" type="color">
         </div>
         <div class="colors">
             <input class="black" id="black" type="button">

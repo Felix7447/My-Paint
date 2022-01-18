@@ -1,0 +1,47 @@
+.buttons {
+    margin: 15px;
+}
+
+
+.buttons input:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: 45ms;
+}
+
+.buttons input:active {
+    cursor: pointer;
+    transform: scale(1);
+    transition: 45ms;
+}
+
+.buttons .clearButton{
+    display: inline-block;
+    margin: 5px 15px;
+    padding: 5px 30px;
+    border-radius: 25px;
+}
+
+.buttons .rangeButton{
+    display: inline-block;
+    margin: 5px 15px;
+    padding: 0px 35px;
+}
+
+/*Color button styles*/
+.buttons #colorButton{
+    width: 70px;
+    margin: 5px 15px;
+    border-radius: 25px;
+    -webkit-appearance: none;
+}
+
+#colorButton::-webkit-color-swatch-wrapper {
+	padding: 0;
+}
+
+#colorButton::-webkit-color-swatch {
+	border: none;
+    border-radius: 25px;
+}
+/*Color button styles*/

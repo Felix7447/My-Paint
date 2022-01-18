@@ -1,0 +1,46 @@
+.colors input {
+    margin: 0px 15px;
+    width: 45px;
+    height: 45px;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 12px;
+    border: 1px black solid;
+}
+
+.colors input:hover {
+    transform: scale(0.95);
+    transition: 20ms;
+    cursor: pointer;
+}
+
+.colors input:active {
+    transform: scale(0.9);
+    transition: 20ms;
+    cursor: pointer;
+}
+
+.colors .black {
+    background-color: black;
+}
+
+.colors .red {
+    background-color: red;
+}
+
+.colors .blue {
+    background-color: blue;
+}
+
+.colors .green {
+    background-color: green;
+}
+
+.colors .yellow {
+    background-color: yellow;
+}
+
+.colors .white {
+    background-color: white;
+}
