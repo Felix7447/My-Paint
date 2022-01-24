@@ -19,6 +19,9 @@ canvas.addEventListener("mousedown", draw);
 canvas.addEventListener("mouseup", stop);
 //====================================================
 
+//backgorund white
+ctx.fillStyle = "white";
+ctx.fillRect(0, 0, WIDTH, HEIGHT);
 
 //Functions===========================================
 function draw() {

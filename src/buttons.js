@@ -12,6 +12,8 @@ downloadButton.addEventListener("click", download);
 //Functions
 function clearCanvas() {
     ctx.clearRect(0, 0, WIDTH, HEIGHT);
+    ctx.fillStyle = "white";
+    ctx.fillRect(0, 0, WIDTH, HEIGHT);
 }
 
 function changeRange() {
@@ -24,5 +26,11 @@ function changeColor() {
 }
 
 function download() {
-    console.log('download');
+    let filename = prompt('Type the name of your draw', '');
+    let link = document.createElement('a');
+    
+    link.download = filename;
+    link.href = canvas.toDataURL("image/png");
+
+    link.click();
 }
