@@ -1,4 +1,4 @@
-# Dillinger
+# My Paint
 ## _This is the paint app created by me!_
 
 Here you can create and edit your draws. You can draw, change colors, change the width of pincel and of course download your art. Please enjoy!
