@@ -18,8 +18,8 @@
         <h4>Draw something</h4>
         <canvas id="canvas" width="500px" height="500px"></canvas>
         <div class="buttons">
-            <input class="clearButton" type="button" value="Clear">
-            <input class="rangeButton" type="range" value="5" min="1" max="20">
+            <input class="clearButton" id="clearButton" type="button" value="Clear">
+            <input class="rangeButton" id="rangeButton" type="range" value="5" min="1" max="50">
             <input id="colorButton" type="color">
         </div>
         <div class="colors">
@@ -30,10 +30,13 @@
             <input class="yellow" id="yellow" type="button">
             <input class="white" id="white" type="button">
         </div>
+        <input type="button" id="downloadButton" class="download" value="Download">
     </main>
     <footer class="footer">
         <h3> <b> contact: <i> <span>felixreyna48@gmail.com</span></i></b></h3>
     </footer>
-    <script src="src/canvas.js"></script>
+    <script src="src/canvas.js" text="javaScript"></script>
+    <script src="src/colors.js" text="javaScript"></script>
+    <script src="src/buttons.js" text="javaScript"></script>
 </body>
 </html>

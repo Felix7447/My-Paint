@@ -25,7 +25,7 @@
 .buttons .rangeButton{
     display: inline-block;
     margin: 5px 15px;
-    padding: 0px 35px;
+    width: 200px;
 }
 
 /*Color button styles*/
@@ -45,3 +45,16 @@
     border-radius: 25px;
 }
 /*Color button styles*/
+
+.download {
+    display: inline-block;
+    margin: 16px 15px -5px 15px;
+    padding: 5px 30px;
+    border-radius: 25px;
+}
+
+.download:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: 45ms;
+}
