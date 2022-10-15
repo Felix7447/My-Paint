@@ -14,9 +14,11 @@
         <h2>Draw something</h2>
         <canvas id="canvas" width="500px" height="500px"></canvas>
         <div class="range-container">
+            <img src="./assets/images/thin-paintbrush.png" alt="thin-paintbrush" />
             <input class="rangeButton" id="rangeButton" type="range" value="5" min="1" max="50">
+            <img src="./assets/images/gross-paintbrush.png" alt="thin-paintbrush" />
         </div>
-        <div class="colors">
+        <div class="colors-container">
             <input class="black" id="black" type="button">
             <input class="red" id="red" type="button">
             <input class="blue" id="blue" type="button">
@@ -26,8 +28,14 @@
             <input id="colorButton" type="color">
         </div>
         <div class="options">
-            <input type="button" id="downloadButton" class="download" value="Download">
-            <input class="clearButton" id="clearButton" type="button" value="Clear">
+            <!-- <input type="button" id="downloadButton" class="download" value="Download"> -->
+            <button id="downloadButton" class="download">
+                <img class="download__image" src="./assets/icons/download-icon.png" alt="">
+            </button>
+            <!-- <input class="clearButton" id="clearButton" type="button" value="Clear"> -->
+            <button class="clearButton" id="clearButton">
+                <img class="clearButton__image" src="./assets/icons/clear-icon.png" alt="">
+            </button>
         </div>
     </main>
     <footer class="footer">
@@ -35,19 +43,19 @@
         <div class="social-media">
             <a class="footer_info__media--email" href="mailto:felixreyna48@gmail.com" target="_blank">
                 <figure>
-                    <img src="../src/assets/icons/email-icon.png" alt="Email Icon">
+                    <img src="./assets/icons/email-icon.png" alt="Email Icon">
                 </figure>
                 <p>E-mail</p>
             </a>
-            <a class="footer_info__media--github" href="https://github.com/Felix7447/My-star-wars-site" target="_blank">
+            <a class="footer_info__media--github" href="https://github.com/Felix7447/My-Paint" target="_blank">
                 <figure>
-                    <img src="../src/assets/icons/github-icon.png" alt="GitHub Icon">
+                    <img src="./assets/icons/github-icon.png" alt="GitHub Icon">
                 </figure>
                 <p>Git Hub</p>
             </a>
             <a class="footer_info__media--linkedin" href="https://www.linkedin.com/in/felix-reyna/" target="_blank">
                 <figure>
-                    <img src="../src/assets/icons/linkedin-icon.png" alt="linkedin Icon">
+                    <img src="./assets/icons/linkedin-icon.png" alt="linkedin Icon">
                 </figure>
                 <p>LinkedIn</p>
             </a>
