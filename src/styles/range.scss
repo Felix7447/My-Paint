@@ -1,0 +1,34 @@
+@mixin Buttons {
+    display: inline-block;
+    border-radius: 25px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.range-container {
+    height: 140px;
+    margin: 0.9em 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.range-container img {
+    height: 65%;
+}
+
+.range-container .rangeButton {
+    @include Buttons;
+    width: 350px;
+    margin: 0 1em;
+}
+
+@media (max-width: 600px) {
+    .range-container {
+        height: 100px;
+    }
+
+    .range-container .rangeButton {
+        width: 60%;
+    }
+}

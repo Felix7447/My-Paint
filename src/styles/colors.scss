@@ -1,0 +1,74 @@
+.colors-container {
+    margin-bottom: 1em;
+}
+
+.colors-container input {
+    cursor: pointer;
+    width: 45px;
+    height: 45px;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 12px;
+    border: 1px black solid;
+    margin: 0 4px;
+}
+
+.colors-container input:hover {
+    transform: scale(0.95);
+    transition: 20ms;
+}
+
+.colors-container input:active {
+    transform: scale(0.9);
+    transition: 20ms;
+}
+
+.colors-container .black {
+    background-color: black;
+}
+
+.colors-container .red {
+    background-color: red;
+}
+
+.colors-container .blue {
+    background-color: blue;
+}
+
+.colors-container .green {
+    background-color: green;
+}
+
+.colors-container .yellow {
+    background-color: yellow;
+}
+
+.colors-container .white {
+    background-color: white;
+}
+
+@media (max-width: 500px) {
+    .colors-container {
+        padding: 0 4em;
+    }
+}
+
+/*Multi-color button styles*/ //===============================
+.colors-container #colorButton{
+    -webkit-appearance: none;
+}
+
+#colorButton::-webkit-color-swatch-wrapper {
+	padding: 0;
+    border-radius: 20px;
+}
+
+#colorButton::-webkit-color-swatch {
+	border: none;
+    background: linear-gradient(rgb(255, 6, 6) , rgb(120, 199, 31), rgb(26, 155, 194), rgb(105, 30, 124));;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 12px;
+}

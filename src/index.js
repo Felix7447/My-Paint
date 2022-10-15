@@ -1,7 +1,7 @@
 import './styles/index.scss';
-// import './styles/buttons.css';
-// import './styles/canvas.css';
-// import './styles/colorButtons.css';
+import './styles/range.scss';
+import './styles/colors.scss';
+import './styles/options.scss';
 
 //Variables===========================================
 var color = "black";

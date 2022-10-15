@@ -1,0 +1,36 @@
+@mixin Buttons {
+    display: inline-block;
+    border-radius: 25px;
+    background-color: white;
+    cursor: pointer;
+}
+
+@mixin buttonsHover {
+    transform: scale(1.05);
+    transition: 45ms;
+}
+
+.options button {
+    @include Buttons;
+    padding: 5px 30px;
+}
+
+.options button:hover {
+    @include buttonsHover;
+}
+
+.options .download {
+    display: inline-block;
+    margin: 16px 15px -5px 15px;
+    border-radius: 25px;
+}
+
+.download__image {
+    width: 24px;
+    padding: 4px 2px;
+}
+
+.clearButton__image {
+    width: 24px;
+    padding: 4px 2px;
+}
