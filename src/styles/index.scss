@@ -1,0 +1,167 @@
+
+// Index
+/* paytone-one-regular - latin */
+@font-face {
+    font-family: 'Paytone One';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+         url('../assets/fonts/paytone-one-v18-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../assets/fonts/paytone-one-v18-latin-regular.woff') format('woff'), /* Modern Browsers */
+  }
+
+body {
+    background: radial-gradient(rgb(207, 207, 207) 5%, rgb(30, 124, 38) 95%);
+    font-family: 'Bakbak One', cursive;
+    color: white;
+}
+
+.header {
+    text-align: center;
+    height: 20%;
+}
+
+.main {
+    text-align: center;
+    height: 60%;
+}
+
+.footer {
+    text-align: center;
+    height: 12em;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 6px;
+
+    h2 {
+        align-self: center;
+        margin-left: 1em;
+    }
+
+    .social-media {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+    }
+}
+
+canvas {
+    // width: 800px;
+    // height: 500px;
+    // background-size: 800px 500px;
+    background-color: white;
+    border: 4px rgb(35, 146, 44) solid;
+    border-radius: 5%;
+}
+
+
+// Buttons
+@mixin Buttons {
+    display: inline-block;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+@mixin buttonsHover {
+    transform: scale(1.05);
+    transition: 45ms;
+}
+
+.range-container {
+    margin: 0.9em 0;
+}
+
+.range-container .rangeButton {
+    @include Buttons;
+    width: 400px;
+}
+
+@media (max-width: 800px) {
+    .range-container .rangeButton {
+        width: 40%;
+    }
+}
+
+/*Color button styles*/
+.colors #colorButton{
+    // width: 70px;
+    // margin: 5px 15px;
+    // border-radius: 25px;
+    -webkit-appearance: none;
+}
+
+#colorButton::-webkit-color-swatch-wrapper {
+	padding: 0;
+}
+
+#colorButton::-webkit-color-swatch {
+	border: none;
+    border-radius: 25px;
+    
+    background: red;
+}
+
+/*Option buttons*/
+
+.options input {
+    @include Buttons;
+    padding: 5px 30px;
+}
+
+.options input:hover {
+    @include buttonsHover;
+}
+
+.options .download {
+    display: inline-block;
+    margin: 16px 15px -5px 15px;
+    padding: 5px 30px;
+    border-radius: 25px;
+}
+
+// Colors
+
+.colors input {
+    cursor: pointer;
+    width: 45px;
+    height: 45px;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 12px;
+    border: 1px black solid;
+}
+
+.colors input:hover {
+    transform: scale(0.95);
+    transition: 20ms;
+}
+
+.colors input:active {
+    transform: scale(0.9);
+    transition: 20ms;
+}
+
+.colors .black {
+    background-color: black;
+}
+
+.colors .red {
+    background-color: red;
+}
+
+.colors .blue {
+    background-color: blue;
+}
+
+.colors .green {
+    background-color: green;
+}
+
+.colors .yellow {
+    background-color: yellow;
+}
+
+.colors .white {
+    background-color: white;
+}

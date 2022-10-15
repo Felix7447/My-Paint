@@ -1,17 +1,17 @@
-import './styles/index.css';
-import './styles/buttons.css';
-import './styles/canvas.css';
-import './styles/colorButtons.css';
+import './styles/index.scss';
+// import './styles/buttons.css';
+// import './styles/canvas.css';
+// import './styles/colorButtons.css';
 
 //Variables===========================================
 var color = "black";
 var pincelWidth = 2;
 
-var canvas = document.getElementById("canvas");
+var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
 
-const WIDTH = canvas.width;
-const HEIGHT = canvas.height;
+let WIDTH = canvas.width;
+let HEIGHT = canvas.height;
 
 let black = document.getElementById("black");
 let red = document.getElementById("red");
@@ -25,6 +25,8 @@ let rangeButton = document.getElementById("rangeButton");
 let colorButton = document.getElementById("colorButton");
 let downloadButton = document.getElementById("downloadButton");
 
+resiszeCanvas();
+
 //====================================================
 
 
@@ -32,6 +34,9 @@ let downloadButton = document.getElementById("downloadButton");
 canvas.addEventListener("mousedown", draw);
 canvas.addEventListener("mouseup", stop);
 
+window.addEventListener("resize", function() {
+    resiszeCanvas();
+})
 
 black.addEventListener("click", function() {
     color = "black";
@@ -63,11 +68,25 @@ colorButton.addEventListener("change", changeColor);
 downloadButton.addEventListener("click", download);
 //====================================================
 
-//backgorund white
-ctx.fillStyle = "white";
-ctx.fillRect(0, 0, WIDTH, HEIGHT);
-
 //Functions===========================================
+function resiszeCanvas() {
+    let userWidth = document.documentElement.scrollWidth;
+
+    if (userWidth >= 800) {
+        canvas.width = 500;
+    } else if (userWidth > 400 && userWidth < 800) {
+        canvas.width = 0.65 * userWidth;
+    } else if (userWidth <= 400) {
+        canvas.width = 0.8 * userWidth;
+    }
+
+    WIDTH = canvas.width;
+    HEIGHT = canvas.height;
+
+    ctx.fillStyle = "white";
+    ctx.fillRect(0, 0, WIDTH, HEIGHT);
+}
+
 function draw() {
     ctx.beginPath();
     ctx.strokeStyle = color;

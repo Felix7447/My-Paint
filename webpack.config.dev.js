@@ -1,9 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CssMinimizer = require('css-minimizer-webpack-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 
 /** @type {import('webpack').Configuration} */
 
@@ -13,6 +10,7 @@ module.exports = {// Webpack config needs an entry, output and resolve like this
         path: path.resolve(__dirname, 'dist'),
         filename: '[name].[contenthash].js'
     },
+    devtool: 'source-map',
     resolve: {
         extensions: ['.js'],   // depending on the extensions you'll have
     },
@@ -58,13 +56,10 @@ module.exports = {// Webpack config needs an entry, output and resolve like this
         new MiniCssExtractPlugin({
             filename: "assets/[name].[contenthash].css"
         }),
-        new CleanWebpackPlugin()
     ],
-    optimization: {
-        minimize: true,
-        minimizer: [
-            new CssMinimizer(),
-            new TerserPlugin(),
-        ]
+    devServer: {
+        static: path.join(__dirname, 'dist'),
+        compress: true,
+        port: 8080
     }
 }
