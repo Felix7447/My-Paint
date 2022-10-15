@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 const CssMinimizer = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
@@ -14,7 +15,13 @@ module.exports = {// Webpack config needs an entry, output and resolve like this
         filename: '[name].[contenthash].js'
     },
     resolve: {
-        extensions: ['.js'],   // depending on the extensions you'll have
+        extensions: ['.js'],   // depending on the extensions you'll have\
+        alias: {
+            '@styles': path.resolve(__dirname, 'src/styles/'),
+            '@fonts': path.resolve(__dirname, 'src/assets/fonts/'),
+            '@icons': path.resolve(__dirname, 'src/assets/icons/'),
+            '@images': path.resolve(__dirname, 'src/assets/images/'),
+        }
     },
     module: { 
         rules: [

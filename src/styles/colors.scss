@@ -24,28 +24,30 @@
     transition: 20ms;
 }
 
-.colors-container .black {
-    background-color: black;
-}
+.colors-container {
+    .black {
+        background-color: black;
+    }
 
-.colors-container .red {
-    background-color: red;
-}
+    .red {
+        background-color: red;
+    }
 
-.colors-container .blue {
-    background-color: blue;
-}
+    .blue {
+        background-color: blue;
+    }
 
-.colors-container .green {
-    background-color: green;
-}
+    .green {
+        background-color: green;
+    }
 
-.colors-container .yellow {
-    background-color: yellow;
-}
+    .yellow {
+        background-color: yellow;
+    }
 
-.colors-container .white {
-    background-color: white;
+    .white {
+        background-color: white;
+    }
 }
 
 @media (max-width: 500px) {

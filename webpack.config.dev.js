@@ -9,11 +9,18 @@ module.exports = {// Webpack config needs an entry, output and resolve like this
     entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: '[name].[contenthash].js'
+        filename: '[name].[contenthash].js',
+        assetModuleFilename: 'assets/images/[hash][ext]'
     },
     devtool: 'source-map',
     resolve: {
         extensions: ['.js'],   // depending on the extensions you'll have
+        alias: {
+            '@styles': path.resolve(__dirname, 'src/styles/'),
+            '@fonts': path.resolve(__dirname, 'src/assets/fonts/'),
+            '@icons': path.resolve(__dirname, 'src/assets/icons/'),
+            '@images': path.resolve(__dirname, 'src/assets/images/'),
+        }
     },
     module: { 
         rules: [

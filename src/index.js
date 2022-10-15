@@ -1,7 +1,7 @@
-import './styles/index.scss';
-import './styles/range.scss';
-import './styles/colors.scss';
-import './styles/options.scss';
+import '@styles/index.scss';
+import '@styles/range.scss';
+import '@styles/colors.scss';
+import '@styles/options.scss';
 
 //Variables===========================================
 var color = "black";
@@ -33,6 +33,8 @@ resiszeCanvas();
 //Event Listeners=====================================
 canvas.addEventListener("mousedown", draw);
 canvas.addEventListener("mouseup", stop);
+canvas.addEventListener("touchstart", mobileDraw);
+canvas.addEventListener("touchend", mobileStop);
 
 window.addEventListener("resize", function() {
     resiszeCanvas();
@@ -63,10 +65,12 @@ white.addEventListener("click", function() {
 });
 
 clear.addEventListener("click", clearCanvas);
-rangeButton.addEventListener("click", changeRange);
-colorButton.addEventListener("change", changeColor);
+rangeButton.addEventListener("change", changeRange);
+rangeButton.addEventListener("touchstart", changeRange);
+colorButton.addEventListener("click", changeColor);
 downloadButton.addEventListener("click", download);
 //====================================================
+
 
 //Functions===========================================
 function resiszeCanvas() {
@@ -121,6 +125,48 @@ function stop() {
     canvas.removeEventListener("mousemove", move);
 }
 
+function mobileDraw() {
+    const rect = canvas.getBoundingClientRect();
+
+    event.preventDefault();
+    const touches = event.changedTouches;
+
+    const  x = touches[0].clientX - rect.left;
+    const  y = touches[0].clientY - rect.top;
+
+    ctx.beginPath();
+    ctx.strokeStyle = color;
+    ctx.lineCap = "round";
+    ctx.lineJoin = "round";
+    ctx.lineWidth = pincelWidth;
+    ctx.moveTo(x, y);
+    ctx.lineTo(x, y);
+    ctx.stroke();
+
+    canvas.addEventListener("touchmove", mobileMove);
+}
+
+function mobileMove() {
+    const rect = canvas.getBoundingClientRect();
+
+    event.preventDefault();
+    const touches = event.changedTouches;
+
+    const  x = touches[0].clientX - rect.left;
+    const  y = touches[0].clientY - rect.top;
+
+    ctx.lineCap = "round";
+    ctx.lineJoin = "round";
+    ctx.strokeStyle = color;
+    ctx.lineWidth = pincelWidth;
+    ctx.lineTo(x, y);
+    ctx.stroke();
+}
+
+function mobileStop() {
+    canvas.removeEventListener("mousemove", move);
+}
+
 function clearCanvas() {
     ctx.clearRect(0, 0, WIDTH, HEIGHT);
     ctx.fillStyle = "white";
@@ -138,10 +184,11 @@ function changeColor() {
 function download() {
     let filename = prompt('Type the name of your draw', '');
     let link = document.createElement('a');
-    
-    link.download = filename;
-    link.href = canvas.toDataURL("image/png");
 
-    link.click();
+    if (filename || filename === '') {
+        link.download = filename;
+        link.href = canvas.toDataURL("image/png");
+        link.click();
+    } 
 }
 //====================================================
