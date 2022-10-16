@@ -12,7 +12,9 @@ module.exports = {// Webpack config needs an entry, output and resolve like this
     entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: '[name].[contenthash].js'
+        filename: 'bundle.js',
+        publicPath: './',
+        assetModuleFilename: 'assets/images/[hash][ext][query]',
     },
     resolve: {
         extensions: ['.js'],   // depending on the extensions you'll have\
@@ -31,6 +33,12 @@ module.exports = {// Webpack config needs an entry, output and resolve like this
                 use: {
                     loader: "babel-loader" // to use babel loader
                 }
+            },
+            {
+                test: /\.html$/,
+                use: [
+                    { loader: 'html-loader' }
+                ]
             },
             {// this is to css config and use css loader
                 test: /\.(css|scss)$/i,

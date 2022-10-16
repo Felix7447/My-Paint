@@ -31,6 +31,12 @@ module.exports = {// Webpack config needs an entry, output and resolve like this
                     loader: "babel-loader" // to use babel loader
                 }
             },
+            {
+                test: /\.html$/,
+                use: [
+                    { loader: 'html-loader' }
+                ]
+            },
             {// this is to css config and use css loader
                 test: /\.(css|scss)$/i,
                 use: [
