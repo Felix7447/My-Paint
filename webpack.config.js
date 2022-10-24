@@ -1,7 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
 const CssMinimizer = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
@@ -76,18 +75,6 @@ module.exports = {// Webpack config needs an entry, output and resolve like this
         }),
         new MiniCssExtractPlugin({
             filename: "assets/[name].[contenthash].css"
-        }),
-        new CopyPlugin({
-            patterns: [
-                {
-                    from: path.resolve(__dirname, "src", "assets/images"),
-                    to: "assets/images"
-                },
-                {
-                    from: path.resolve(__dirname, "src", "assets/icons"),
-                    to: "assets/icons"
-                }
-            ]
         }),
         new CleanWebpackPlugin()
     ],
