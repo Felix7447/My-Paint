@@ -126,6 +126,7 @@ function stop() {
 }
 
 function mobileDraw() {
+    ctx.restore();
     const rect = canvas.getBoundingClientRect();
 
     event.preventDefault();
@@ -164,6 +165,7 @@ function mobileMove() {
 }
 
 function mobileStop() {
+    ctx.save();
     canvas.removeEventListener("mousemove", move);
 }
 

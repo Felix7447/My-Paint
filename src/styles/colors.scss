@@ -53,6 +53,12 @@
 @media (max-width: 500px) {
     .colors-container {
         padding: 0 4em;
+        margin-bottom: 0;
+    }
+
+    .colors-container input {
+        width: 40px;
+        height: 40px;
     }
 }
 

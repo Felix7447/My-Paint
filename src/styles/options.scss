@@ -34,3 +34,19 @@
     width: 24px;
     padding: 4px 2px;
 }
+
+@media (max-width: 500px) {
+    .options button {
+        padding: 0 35px;
+    }
+
+    .download__image {
+        width: 18px;
+        padding: 4px 2px;
+    }
+    
+    .clearButton__image {
+        width: 18px;
+        padding: 4px 2px;
+    }
+}
